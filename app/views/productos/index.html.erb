@@ -1,0 +1,97 @@
+<div class="es bsk">
+  <div class="brv">
+    <div class="brw">
+      <h5 class="brx">CATALOGOS</h5>
+      <h2 class="brx">PRODUCTOS</h2>
+    </div>
+  </div>
+
+  <div class="bpx azo">
+    <div class="bpy bpz">
+      <div class="ayt brg">
+        <input type="text" class="form-control bvj" placeholder="Buscar">
+        <span class="bv bje"></span>
+      </div>
+    </div>
+    <div class="bpy">
+      <div class="pz">
+        <a href="/productos/new"><button type="button" class="ce pi" title="Agregar" action=>
+          <span class="bv bng">
+            
+          </span>
+        </button></a>
+        
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="nu">
+    <table class="ck" data-sort="table">
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Nombre</th>
+          <th>Marca</th>
+          <th>Descripcion</th>
+          <th>Precio</th>
+          <th>Modificar</th>
+          <th>Eliminar</th>
+        </tr>
+      </thead>
+      <tbody>
+
+        <% @nombres.each do |n| %>
+          <tr>
+              <td><a href="#"><%= n.id %></a></td>
+              <td><%= n.nombre %></td>
+              <td><%= n.marca.nombre %></td>
+              <td><%= n.descripcion %></td>
+              <td><%= n.precio %></td>
+              <td><%= link_to productos_edit_path(n) do %>
+             <button type="button" class="ce pi" title="Modificar">
+                <span class="bv bkq"></span>
+              </button><% end %></td>
+              <td><%= link_to productos_delete_path(n), :data => {:confirm => 'Estas seguro de eliminar?'} do %>
+              <button type="button" class="ce pi" title="Eliminar">
+                <span class="bv bfq"></span>
+              </button><% end %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="bpx azo">
+    <div class="bpy bpz">
+      <div class="ayt brg">
+        <label for="total">Total:</label>
+        <%= text_field_tag 'total',@total, class: 'form-control', disabled: true %>
+      </div>
+    </div>
+  </div>
+
+  <div class="awt">
+    <nav>
+      <ul class="sq">
+        <li class="sr">
+          <a class="ss" href="#" aria-label="Previous">
+            <span aria-hidden="true">&laquo;</span>
+            <span class="aep">Previous</span>
+          </a>
+        </li>
+        <li class="sr active"><a class="ss" href="#">1</a></li>
+        <li class="sr"><a class="ss" href="#">2</a></li>
+        <li class="sr"><a class="ss" href="#">3</a></li>
+        <li class="sr"><a class="ss" href="#">4</a></li>
+        <li class="sr"><a class="ss" href="#">5</a></li>
+        <li class="sr">
+          <a class="ss" href="#" aria-label="Next">
+            <span aria-hidden="true">&raquo;</span>
+            <span class="aep">Next</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</div>

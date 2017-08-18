@@ -1,0 +1,16 @@
+<%= form_tag({:action => 'save'}, {:class =>'form-horizontal'}) do %>
+    <div class="form-group">
+      <label for="email">Nombre:</label>
+      <%= text_field_tag 'nombre',@nombre, class: 'form-control', placeholder: "Escriba el nombre" %>
+    </div>
+    
+    <%= submit_tag 'Agregar', class: 'btn btn-default'%> 
+  
+      <% flash.each do |key, value| %>
+         <div class="alert alert-danger">
+          <strong>Error!</strong> <%= value %>
+          </div>
+      <% end %>
+    
+    
+  <% end %>

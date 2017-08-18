@@ -1,0 +1,49 @@
+<div class="es bsk">
+  <div class="brv">
+    <div class="brw">
+      <h5 class="brx">PRODUCTOS</h5>
+      <h2 class="brx">EDITAR</h2>
+    </div>
+  </div>
+
+  <div class="bpx azo">
+    
+  </div>
+
+  
+  
+  <%= form_tag({:action => 'update'}, {:class =>'form-horizontal'}) do %>
+    <div class="form-group">
+      <label for="nombre">Nombre:</label>
+      <%= text_field_tag 'nombre',@producto.nombre, class: 'form-control', placeholder: "Escriba el nombre" %>
+    </div>
+    <div class="form-group">
+      <label for="marca">Marca:</label>
+      <%= select_tag(:marca_id, options_for_select(@marcas_options,@producto.marca_id),  class: 'form-control', :prompt=>"Selecione la marca") %>
+    </div>
+    <div class="form-group">
+      <label for="descripcion">Descripcion:</label>
+      <%= text_area_tag 'descripcion',@producto.descripcion, class: 'form-control', placeholder: "Escriba la descripción", rows:3 %>
+    </div>
+    <div class="form-group">
+      <label for="precio">Precio:</label>
+      <%= text_field_tag 'precio',@producto.precio, class: 'form-control', placeholder: "Escriba el precio" %>
+    </div>
+    
+    <%= submit_tag 'Guardar', class: 'btn btn-default'%> 
+  
+      <% flash.each do |key, value| %>
+         <div class="alert alert-danger">
+          <strong>Error!</strong> <%= value %>
+          </div>
+      <% end %>
+    
+    
+  <% end %>
+
+
+</div>
+
+
+
+</div>

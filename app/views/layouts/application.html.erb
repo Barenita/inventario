@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Inventario</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    
+	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic" rel="stylesheet">
+  </head>
+
+  <body>
+  		<div class="bw">
+		    <div class="di">
+		      <div class="em brh">
+		        <nav class="bro">
+		          <div class="bri">
+		            <button class="bqe bqg brj" type="button" data-toggle="collapse" data-target="#nav-toggleable-md">
+		              <span class="aep">Toggle nav</span>
+		            </button>
+		            <a class="brk bsi" href="#">
+		              <span class="bv bik brl"></span>
+		            </a>
+		          </div>
+
+		          <div class="collapse bql" id="nav-toggleable-md">
+		            <ul class="nav qq nav-stacked xx">
+		              <li class="ayx">CATALOGOS</li>
+		              <li class="qp">
+		                <a class="qn" href="/marcas/index">Marcas</a>
+		              </li>
+		              <li class="qp">
+		                <a class="qn" href="/productos/index">Productos</a>
+		              </li>
+		              
+		            </ul>
+		            <hr class="bsj afx">
+		          </div>
+		        </nav>
+		      </div>
+		      <div class="es bsk">
+		      		<%= yield %>
+		      </div>
+
+
+		   
+		    <script>
+		      // execute/clear BS loaders for docs
+		      $(function(){while(window.BS&&window.BS.loader&&window.BS.loader.length){(window.BS.loader.pop())()}})
+		    </script>
+
+    
+  </body>
+</html>
